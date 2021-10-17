@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/css/styles.css")
+    title Dashboard
+  body
+    if result
+      a(href="/dashboard").scrapper__back Back
+  .container__scrapper
+    if user
+     h1= `BIENVENIDO: ${user}`
+    a(href="/dashboard/logout").logout Logout
+    a(href="/dashboard/scrapper").scrapper__get  Get Scrapper
+    a(href="/dashboard/favorites").scrapper__get  Show Favorites
+    if result
+     div
+      a#url(href=`${result.url}`).scrapper__h2  La PS5 mas baráta
+      p#name= result.name
+      p#price= `Precio: ${result.price}`
+    button()#favorite Save to Favorites
+  script(src="/js/main.js") 
