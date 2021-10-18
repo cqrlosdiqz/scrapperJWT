@@ -3,9 +3,8 @@ const FavoriteModel = require('../models/Favorites');
 const authenticateJWT = require('../utils/authenticateJWT');
 
 router.post('/', [authenticateJWT], async (req, res) => {
-
   const newFavorite = new FavoriteModel({
-    product: req.body,
+    ...req.body,
     userId: req.user.payload.userId,
   });
 

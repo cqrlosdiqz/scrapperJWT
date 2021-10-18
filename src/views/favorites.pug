@@ -12,8 +12,8 @@ html(lang="en")
     if favorites 
         each favorite in favorites
           div.product
-            p= favorite.product.name
-            p= favorite.product.price
-            a(href=`${favorite.product.url}`) url
+            p= favorite.name
+            p= favorite.price
+            a(href=`${favorite.url}`) url
     else
       p No favorites yet
